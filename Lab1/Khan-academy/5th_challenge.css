@@ -1,0 +1,20 @@
+body {
+    background-color: pink;
+}
+
+p {
+    color: brown;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1 {
+    color: red;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+}

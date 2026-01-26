@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    width: 60%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+#toc {
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+.recipe {
+    margin-top: 40px;
+}

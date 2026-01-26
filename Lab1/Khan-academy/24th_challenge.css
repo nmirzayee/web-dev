@@ -1,0 +1,14 @@
+h2.metal {
+    color: white;
+    background-color: red;
+}
+
+h2.non-metal {
+    color: white;
+    background-color: blue;
+}
+
+h2.semi-metal {
+    color: white;
+    background-color: purple;
+}

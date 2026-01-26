@@ -1,0 +1,23 @@
+h1 {
+    color: darkred;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+ul li a {
+    color: blue;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+ul li a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+img {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+    height: auto;
+}
