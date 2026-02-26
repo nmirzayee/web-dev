@@ -1,0 +1,16 @@
+#flinstones {
+    font-family: sans-serif;
+}
+
+#jetsons {
+    font-family: fantasy;
+}
+
+#addams {
+    font-family: monospace;
+}
+
+body {
+    background-color: pink;
+    font-family: monospace;
+}

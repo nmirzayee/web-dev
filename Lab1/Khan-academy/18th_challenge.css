@@ -1,0 +1,11 @@
+.info {
+    width: 70%;
+    height: 200px;
+    overflow: auto;
+    background: rgb(219, 235, 255);
+}
+
+.pic {
+    width: 70%;
+    overflow: hidden;
+}
