@@ -1,0 +1,14 @@
+<section>
+  <div *ngIf="displayed.length === 0" class="empty">
+    No products in this category
+  </div>
+
+  <div class="grid" *ngIf="displayed.length > 0">
+    <app-product-item
+      *ngFor="let p of displayed"
+      [product]="p"
+      (like)="onLike($event)"
+      (delete)="onDelete($event)"
+    />
+  </div>
+</section>

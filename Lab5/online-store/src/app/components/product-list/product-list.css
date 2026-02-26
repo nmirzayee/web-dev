@@ -1,0 +1,20 @@
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 980px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.empty {
+  padding: 18px;
+  border: 1px dashed #d9d9d9;
+  border-radius: 14px;
+  color: #444;
+  background: #fafafa;
+}

@@ -1,0 +1,118 @@
+<article class="card">
+  <!-- Main image -->
+  <div class="image-wrap">
+    <img
+      class="main-image"
+      [src]="selectedImage"
+      [alt]="product.name"
+      (click)="openModal()"
+      loading="lazy"
+    />
+    <button class="open-btn" type="button" (click)="openModal()">View</button>
+  </div>
+
+  <!-- Thumbnails -->
+  <div class="thumbs" aria-label="Product images">
+    <button
+      class="thumb"
+      type="button"
+      *ngFor="let img of product.images; let i = index"
+      (click)="selectThumb(i)"
+      [class.active]="selectedIndex === i"
+      [title]="'Image ' + (i + 1)"
+    >
+      <img [src]="img" [alt]="product.name + ' thumbnail ' + (i + 1)" loading="lazy" />
+    </button>
+  </div>
+
+  <div class="content">
+    <div class="top-row">
+      <h3 class="name">{{ product.name }}</h3>
+      <span class="price">{{ formatPriceKZT(product.price) }}</span>
+    </div>
+
+    <p class="desc">{{ product.description }}</p>
+
+    <div class="meta">
+      <div class="rating" aria-label="Rating">
+        <span class="stars" aria-hidden="true">
+          <span
+            class="star"
+            *ngFor="let s of starArray()"
+            [class.filled]="isStarFilled(product.rating, s)"
+            >★</span
+          >
+        </span>
+        <span class="rating-number">{{ product.rating.toFixed(1) }}</span>
+      </div>
+
+      <!-- REAL kaspi.kz link -->
+      <button class="link" type="button" (click)="openKaspi()">
+        Open on Kaspi ↗
+      </button>
+    </div>
+
+    <div class="likes-row">
+      <div class="likes">❤️ {{ product.likes }}</div>
+      <button class="btn" type="button" (click)="onLike()">Like</button>
+      <button class="btn danger" type="button" (click)="onDelete()">Delete</button>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" type="button" (click)="shareWhatsApp()">
+        Share (WhatsApp)
+      </button>
+      <button class="btn" type="button" (click)="shareTelegram()">
+        Share (Telegram)
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal Gallery -->
+  <div
+    class="modal-overlay"
+    *ngIf="isModalOpen"
+    (click)="onOverlayClick($event)"
+  >
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-title">{{ product.name }}</div>
+        <button class="icon-btn" type="button" (click)="closeModal()">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <button class="nav-btn" type="button" (click)="prevModal()" aria-label="Previous">
+          ‹
+        </button>
+
+        <img
+          class="modal-image"
+          [src]="product.images[modalIndex]"
+          [alt]="product.name"
+        />
+
+        <button class="nav-btn" type="button" (click)="nextModal()" aria-label="Next">
+          ›
+        </button>
+      </div>
+
+      <div class="modal-thumbs">
+        <button
+          class="thumb"
+          type="button"
+          *ngFor="let img of product.images; let i = index"
+          (click)="modalIndex = i"
+          [class.active]="modalIndex === i"
+        >
+          <img [src]="img" [alt]="product.name + ' thumb ' + (i + 1)" />
+        </button>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn" type="button" (click)="openKaspi()">Open on Kaspi ↗</button>
+        <button class="btn primary" type="button" (click)="shareWhatsApp()">Share (WhatsApp)</button>
+        <button class="btn" type="button" (click)="shareTelegram()">Share (Telegram)</button>
+      </div>
+    </div>
+  </div>
+</article>
