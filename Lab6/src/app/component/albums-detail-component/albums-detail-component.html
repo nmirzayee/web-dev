@@ -1,0 +1,22 @@
+<div class="album-detail-card">
+  <h2 class="album-detail-title">Album Details</h2>
+  @if(loading()) {
+    <p class="loading">Album Details is loading...</p>
+  } @else if(error()) {
+    <p class="error"> {{ error() }}</p>
+  } @else {
+    <p>Album Id: {{ album()?.id}}</p>
+    <p>User Id: {{album()?.userId}}</p>
+    <input #titleInput [value]="album()?.title">
+    <button (click)="save(titleInput.value)" class="save">Save</button>
+
+    <div class="photos-link-container">
+      <a [routerLink]="['/albums', album()?.id, 'photos']">View Photos →</a>
+    </div>
+  }
+
+  <div>
+    <a class="albums-link" routerLink="/albums" routerLinkActive="active">← Back to Albums</a>
+  </div>
+
+</div>

@@ -1,0 +1,72 @@
+.album-detail-card {
+  padding: 30px 20px;
+  line-height: 30px;
+  max-width: 600px;
+  margin: auto;
+  background-color: white;
+  border: 2px solid #E7DFC4;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.album-detail-title {
+  font-size: 26px;
+  color: #5A2e0c;
+  margin-bottom: 18px;
+}
+
+.loading {
+  color: #5a2e0c90;
+  margin-bottom: 20px;
+}
+.error {
+  color: #e2680b;
+  margin-bottom: 20px;
+}
+.loaded {
+  color: #5a2e0cce;
+}
+
+.albums-link, .photos-link-container a {
+  text-decoration: none;
+  background-color: #e2680b;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white;
+  transition: all .2s ease;
+}
+
+.albums-link:hover, .photos-link-container a:hover {
+  transform: scale(1.02);
+  box-shadow: 2px 2px 2px rgba(90, 46, 12, 0.3);
+}
+
+input {
+  width: 70%;
+}
+
+input, .save {
+  border: 2px solid #E7DFC4;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 20px 5px 0 0;
+}
+
+.save {
+  background-color: #E7DFC4;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.save:hover {
+  background-color: #e2680b;
+  color: white;
+}
+
+.photos-link-container {
+  margin: 20px 0;
+}
+
+.photos-link-container a {
+  background-color: #5A2e0c;
+}

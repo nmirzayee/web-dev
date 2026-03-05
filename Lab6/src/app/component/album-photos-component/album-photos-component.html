@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="album-photos-card">
+    <h2 class="album-photos-title">Album Photos</h2>
+
+    @if(loading()) {
+      <p class="loading">Photos are loading...</p>
+    } @else if(error()) {
+      <p class="error">{{ error() }}</p>
+    } @else {
+      <div class="grid">
+        @for(photo of photos(); track photo.id) {
+          <div class="photo">
+            <img [src]="'https://picsum.photos/150?random=' + photo.id" [alt]="photo.title">
+
+            <div class="photo-title">{{ photo.title }}</div>
+          </div>
+        }
+      </div>
+    }
+
+    <div>
+      <a class="album-details-link" [routerLink]="['/albums', id()]" routerLinkActive="active">← Back to Album Details</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+.container {
+  margin: 20px;
+}
+
+.album-photos-card {
+  padding: 30px 20px;
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
+  border: 2px solid #E7DFC4;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  place-content: center;
+  gap: 15px;
+  margin: 40px auto;
+}
+
+.grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.grid .photo {
+  background-color: #E7DFC4;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  transition: all .08s ease;
+  overflow: hidden;
+}
+
+
+.grid .photo:hover {
+  transform: scale(1.28);
+  padding: 10px;
+  background-color: #e2680b;
+}
+
+.album-photos-title {
+  font-size: 26px;
+  color: #5A2e0c;
+  margin-bottom: 18px;
+}
+
+.loading {
+  color: #5a2e0c90;
+  margin-bottom: 20px;
+}
+.error {
+  color: #e2680b;
+  margin-bottom: 20px;
+}
+.loaded {
+  color: #5a2e0cce;
+}
+
+.album-details-link {
+  text-decoration: none;
+  background-color: #e2680b;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white;
+  transition: all .2s ease;
+}
+
+.album-details-link:hover {
+  transform: scale(1.02);
+  box-shadow: 2px 2px 2px rgba(90, 46, 12, 0.3);
+}
+
+
+/* while hovering the image, the title should should up */
+.photo-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: #5a2e0c7e;
+  color: white;
+  padding: 8px;
+  font-size: 14px;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.photo:hover .photo-title {
+  opacity: 1;
+}

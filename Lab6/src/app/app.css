@@ -1,0 +1,31 @@
+header {
+  background-color: #5a2e0c;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 12px;
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+  border: 1px solid #b85509;
+  border-radius: 10px;
+  padding: 6px 10px;
+  transition: all .15s ease;
+}
+
+
+nav a:hover {
+  background-color: #b85509;
+}
+
+nav a.active {
+  background-color: #e2680b;
+}

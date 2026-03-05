@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="albums-card">
+    <h2 class="album-title">Album List</h2>
+
+    @if(loading()) {
+      <p class="loading">Albums are loading...</p>
+    } @else if(error()) {
+      <p class="error">{{ error() }}</p>
+    } @else {
+      <p class="loaded">{{ albums().length }} Albums loaded</p>
+      <ul class="album-list">
+        @for(album of albums(); track album.id) {
+          <li class="album-item">
+            <div>
+              {{ album.id }})
+              <a class="link" [routerLink]="['/albums', album.id]"> {{ album.title }}</a>
+            </div>
+
+            <button (click)="remove(album.id)" class="danger-btn">Remove</button>
+          </li>
+        }
+      </ul>
+    }
+
+    <div>
+      <a class="home-link" routerLink="/home" routerLinkActive="active">← Back to Home</a>
+    </div>
+
+  </div>
+</div>
