@@ -1,0 +1,29 @@
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HousingLocation } from '../housing-location';
+import { Router, RouterModule } from '@angular/router';
+
+@Component({
+  selector: 'app-housing-location',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
+  template: `
+    <section class="listing">
+      <!-- if we don't use [src], I mean the square brackets, it acts as if it is a string, we are saying we get this value --> 
+       <!-- property binding -->
+      <img class="listing-photo" [src]="housingLocation.photo" alt="Exterior photo of {{housingLocation.name}}">
+      <!-- double curely braces are called interpolation, it allows to use the ts inside our html -->
+      <h2 class="listing-heading">{{housingLocation.name}}</h2>
+      <p class="listing-location">{{housingLocation.city}}, {{housingLocation.state}}</p>
+      <a [routerLink]="['/details', housingLocation.id]">Learn More</a>
+    </section>
+  `,
+  styleUrls: ['./housing-location.component.css']
+})
+export class HousingLocationComponent {
+  // ! here says, the value of this can't be null or undefined
+  // @Input() -> is a decorator from angular. It means -> “This variable will receive data from a parent component.”
+  // @input() nameOfVariable:TypeOfVariable;
+  // ex: id:number;
+ @Input() housingLocation!:HousingLocation;
+}
