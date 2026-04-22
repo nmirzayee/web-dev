@@ -1,0 +1,159 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background:
+    linear-gradient(rgba(24,16,10,0.86), rgba(24,16,10,0.86)),
+    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1600&q=80')
+    center/cover no-repeat;
+  color: #f5eee6;
+  font-family: Arial, sans-serif;
+}
+
+/* TITLE */
+h2 {
+  text-align: center;
+  color: #ffcc80;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+/* LIST */
+.orders-list {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ORDER CARD */
+.order-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+}
+
+/* HEADER */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(255,204,128,0.15);
+  padding-bottom: 10px;
+}
+
+.order-header h3 {
+  margin-bottom: 4px;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.date {
+  font-size: 14px;
+  color: #d7c3b4;
+}
+
+/* STATUS */
+.status-box {
+  display: flex;
+  align-items: center;
+}
+
+.status {
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: #ff9800;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* SUMMARY */
+.order-summary {
+  margin-bottom: 14px;
+}
+
+.order-summary p {
+  margin: 6px 0;
+  color: #e0cfc2;
+}
+
+/* ITEMS */
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ITEM CARD */
+.item-card {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+/* IMAGE */
+.item-card img {
+  width: 110px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ITEM INFO */
+.item-info h4 {
+  margin-bottom: 6px;
+  color: #ffcc80;
+  font-size: 18px;
+}
+
+.item-info p {
+  margin: 3px 0;
+  color: #e0cfc2;
+  font-size: 14px;
+}
+
+/* TOTAL TEXT */
+.item-info strong {
+  color: #ffffff;
+}
+
+/* MESSAGES */
+.error-message,
+.empty-message {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: #ff9b9b;
+}
+
+.empty-message {
+  color: #e0cfc2;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .item-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .item-card img {
+    width: 100%;
+    height: 180px;
+  }
+}

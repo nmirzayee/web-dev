@@ -1,0 +1,31 @@
+# Node modules (VERY IMPORTANT)
+node_modules/
+
+# Build output
+dist/
+out-tsc/
+
+# Angular cache
+.angular/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Environment files (IMPORTANT for security)
+src/environments/*.ts
+
+# Optional (if you have test configs)
+coverage/
+
+# Package lock (optional - usually KEEP it)
+# package-lock.json

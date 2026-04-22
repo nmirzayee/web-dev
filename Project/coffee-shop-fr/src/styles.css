@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #2c1e16, #1a120d);
+  color: #f5eee6;
+}
+
+/* container for pages */
+.page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+/* common card */
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+/* button style */
+.btn {
+  background: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #ffb347;
+}

@@ -1,0 +1,36 @@
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px;
+  background: rgba(255,255,255,0.05);
+}
+
+nav a {
+  color: #f5eee6;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  background: rgba(255,255,255,0.1);
+}
+/* active page */
+nav a.active {
+  background: rgba(255,255,255,0.15);
+  color: #ffcc80;
+}
+nav .logout-btn {
+  background: none;
+  border: none;
+  color: #f5eee6;
+  font: inherit;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+nav .logout-btn:hover {
+  background: rgba(255,255,255,0.1);
+}

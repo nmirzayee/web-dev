@@ -1,0 +1,48 @@
+<h2>🛒 Your Cart</h2>
+
+<div class="cart-list">
+  @for (item of cartService.getCart(); track item.product.id) {
+    <div class="cart-item">
+      <img
+        [src]="item.product.image"
+        [alt]="item.product.name"
+        referrerpolicy="no-referrer"
+      >
+
+      <div class="item-info">
+        <h3>{{ item.product.name }}</h3>
+        <p>{{ item.product.description }}</p>
+        <p class="price">{{ item.product.price }} KZT</p>
+
+        <div class="quantity-box">
+          <button class="qty-btn" (click)="decreaseItem(item.product.id)">-</button>
+          <span>{{ item.quantity }}</span>
+          <button class="qty-btn" (click)="increaseItem(item.product.id)">+</button>
+        </div>
+
+        <button class="remove-btn" (click)="removeItem(item.product.id)">Remove</button>
+      </div>
+    </div>
+  }
+</div>
+
+<h3 class="total">Total: {{ cartService.getTotal() }} KZT</h3>
+
+<div class="note-section">
+  <label for="note">Special Instructions</label>
+  <textarea
+    id="note"
+    [(ngModel)]="orderNote"
+    placeholder="Example: cappuccino hot, no milk"
+  ></textarea>
+</div>
+
+<button class="order-btn" (click)="placeOrder()">Place Order</button>
+
+@if (successMessage) {
+  <p class="success-message">{{ successMessage }}</p>
+}
+
+@if (errorMessage) {
+  <p class="error-message">{{ errorMessage }}</p>
+}
