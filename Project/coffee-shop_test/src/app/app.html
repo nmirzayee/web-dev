@@ -1,0 +1,29 @@
+
+<header class="navbar">
+  <div class="logo">
+    <span class="logo-icon">☕</span>
+    <span class="logo-text">Coffee Shop</span>
+  </div>
+
+  <nav class="nav-links">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+
+    @if (!authService.isLoggedIn()) {
+      <a routerLink="/register" routerLinkActive="active">Register</a>
+      <a routerLink="/login" routerLinkActive="active">Login</a>
+    }
+
+    @if (authService.isLoggedIn()) {
+      
+      <a routerLink="/menu" routerLinkActive="active">Menu</a>
+      <a routerLink="/cart" routerLinkActive="active">Cart</a>
+      <a routerLink="/orders" routerLinkActive="active">Orders</a>
+      <a routerLink="/profile">Profile</a>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    }
+  </nav>
+</header>
+
+<main class="page-content">
+  <router-outlet></router-outlet>
+</main>

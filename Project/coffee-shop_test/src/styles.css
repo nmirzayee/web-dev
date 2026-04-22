@@ -1,0 +1,10 @@
+app-root {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+/* REMOVE DEFAULT BROWSER SPACE */
+html, body {
+  margin: 0;
+  padding: 0;
+}
