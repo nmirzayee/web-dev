@@ -5,10 +5,12 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
+from django.contrib.auth.models import User
+
 
 
 from .models import Product, Order
-from .serializers import ProductSerializer, OrderSerializer
+from .serializers import ProductSerializer, OrderSerializer, RegisterSerializer, UserSerializer
 
 
 @api_view(['POST'])
@@ -106,3 +108,32 @@ class OrderListCreateAPIView(APIView):
             return Response(serializer.data, status=201)
 
         return Response(serializer.errors, status=400)
+    
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def register_view(request):
+    serializer = RegisterSerializer(data=request.data)
+
+    if serializer.is_valid():
+        username = serializer.validated_data['username']
+        email = serializer.validated_data['email']
+        password = serializer.validated_data['password']
+
+        if User.objects.filter(username=username).exists():
+            return Response({'error': 'Username already exists'}, status=400)
+
+        user = User.objects.create_user(
+            username=username,
+            email=email,
+            password=password
+        )
+
+        return Response({'message': 'User registered successfully'}, status=201)
+
+    return Response(serializer.errors, status=400)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def user_view(request):
+    serializer = UserSerializer(request.user)
+    return Response(serializer.data)
