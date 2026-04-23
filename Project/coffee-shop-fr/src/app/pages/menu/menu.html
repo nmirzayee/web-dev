@@ -1,0 +1,60 @@
+<h2 style="text-align:center; margin:20px 0; color:#ffcc80;">
+  ☕ Coffee Menu
+</h2>
+
+
+<div class="categories">
+
+  <button
+    (click)="showAll()"
+    [class.active]="selectedCategory() === null">
+    All
+  </button>
+
+  <button
+    *ngFor="let cat of categories()"
+    (click)="filterByCategory(cat.id)"
+    [class.active]="selectedCategory() === cat.id">
+    {{ cat.name }}
+  </button>
+
+</div>
+
+
+<p *ngIf="errorMessage" style="text-align:center; color:#ff9b9b;">
+  {{ errorMessage }}
+</p>
+
+<!-- PRODUCTS GRID -->
+<div class="products">
+
+  <div class="product-card" *ngFor="let product of products()">
+
+    <!-- IMAGE -->
+    <img
+      [src]="product.image"
+      [alt]="product.name"
+      referrerpolicy="no-referrer"
+    >
+
+    <!-- INFO -->
+    <div class="product-info">
+      <h3>{{ product.name }}</h3>
+
+      <p class="description">
+        {{ product.description }}
+      </p>
+
+      <p class="price">
+        {{ product.price }} KZT
+      </p>
+    </div>
+
+    <!-- BUTTON -->
+    <button (click)="addToCart(product)">
+      Add to Cart
+    </button>
+
+  </div>
+
+</div>

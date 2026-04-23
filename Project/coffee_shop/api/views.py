@@ -9,8 +9,8 @@ from django.contrib.auth.models import User
 
 
 
-from .models import Product, Order
-from .serializers import ProductSerializer, OrderSerializer, RegisterSerializer, UserSerializer
+from .models import Product, Order, Category
+from .serializers import ProductSerializer, OrderSerializer, RegisterSerializer, UserSerializer, CategorySerializer
 
 
 @api_view(['POST'])
@@ -137,3 +137,15 @@ def register_view(request):
 def user_view(request):
     serializer = UserSerializer(request.user)
     return Response(serializer.data)
+
+class CategoryListAPIView(APIView):
+    def get(self, request):
+        categories = Category.objects.all()
+        serializer = CategorySerializer(categories, many=True)
+        return Response(serializer.data)
+    
+class ProductsByCategoryAPIView(APIView):
+    def get(self, request, category_id):
+        products = Product.objects.filter(category_id=category_id)
+        serializer = ProductSerializer(products, many=True)
+        return Response(serializer.data)
